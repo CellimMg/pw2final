@@ -14,8 +14,10 @@ use App\Http\Controllers\CarrinhoController;
 |
 */
 
-Route::get('/carrinho', [CarrinhoController::class, 'getProdutos']);
 
-Route::get('/', function(){
-    return view('carrinho');
-});
+Route::redirect('/', '/carrinho');
+
+Route::get('/carrinho', [CarrinhoController::class, 'getProdutos']);
+Route::get('/carrinho/adicionar', [CarrinhoController::class, 'formAdicionar']);
+Route::post('/carrinho/adicionar', [CarrinhoController::class, 'adicionar']);
+

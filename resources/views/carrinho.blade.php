@@ -14,27 +14,24 @@
                 <th>
                     Quantidade
                 </th>
-                <th>
-                    Total
-                </th>
             </tr>
             <tbody>
                 @foreach ($produtos as $produto)
                     <tr>
-                        <td>{{$produto['produto']}}</td>
-                        <td>{{$produto['valor']}}</td>
-                        <td>{{$produto['quantidade']}}</td>
-                        <td>{{$produto['total']}}</td>
+                        <td>{{$produto['nome']}}</td>
+                        <td>R$ {{$produto['valor']}}</td>
+                        <td>{{$produto['quantidadeEstoque']}}</td>
                     </tr>
                 @endforeach
-                <tr>
-                    <td>TOTAL</td>
-                    <td></td>
-                    <td></td>
-                    <td>R$ {{$total}}</td>
-                </tr>
             </tbody>
         </thead>
     </table>
 </div>
+
+<div class="fixed-action-btn">
+    <a class = "btn-floating btn-large waves-effect waves-light red" href="{{url("/carrinho/adicionar")}}">
+        <i class = "large material-icons">add</i>
+    </a>
+</div>
+
 @endsection
