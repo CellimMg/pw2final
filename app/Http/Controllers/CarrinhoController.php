@@ -6,13 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
+use App\Models\Fornecedor;
 
 class CarrinhoController extends Controller
 {
 
     public function formAdicionar()
     {
-        return view('form');
+        $fornecedores = Fornecedor::all();
+        return view('form', compact('fornecedores'));
     }
 
     public function adicionar(ProductRequest $request)
@@ -23,6 +25,7 @@ class CarrinhoController extends Controller
 
     public function getProdutos(){
         $produtos = Product::all();
+    
         return view('carrinho', compact('produtos'));
     }
 }

@@ -12,15 +12,19 @@
                     Valor
                 </th>
                 <th>
-                    Quantidade
+                    Quantidade Estoque
+                </th>
+                <th>
+                   Nome do Fornecedor
                 </th>
             </tr>
             <tbody>
                 @foreach ($produtos as $produto)
                     <tr>
-                        <td>{{$produto['nome']}}</td>
-                        <td>R$ {{$produto['valor']}}</td>
-                        <td>{{$produto['quantidadeEstoque']}}</td>
+                        <td>{{$produto->nome}}</td>
+                        <td>R$ {{$produto->valor}}</td>
+                        <td>{{$produto->quantidadeEstoque}}</td>
+                        <td>{{$produto->fornecedor->nome}}</td>
                     </tr>
                 @endforeach
             </tbody>

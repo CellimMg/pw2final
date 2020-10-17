@@ -18,6 +18,10 @@ class CreateProductsTable extends Migration
             $table->string('nome', 100);
             $table->float('valor',8,2);
             $table->integer('quantidadeEstoque');
+            $table->integer('fornecedor_id')->unsigned();
+            $table->foreign('fornecedor_id')
+                ->references('id')->on('fornecedores')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

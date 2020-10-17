@@ -26,7 +26,8 @@ class ProductRequest extends FormRequest
         return [
             'nome' => 'bail|required|min:3|max:100',
             'valor' => 'bail|required|regex:/^\d+(\.\d{1,2})?$/',
-            'quantidadeEstoque' => 'bail|required'
+            'quantidadeEstoque' => 'bail|required',
+            'fornecedor_id' => 'bail|required'
         ];
     }
 }
